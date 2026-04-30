@@ -3,35 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundo La Querencia | Sabor, Tradición y Caballos de Paso</title>
+    <title>La Querencia - Fundo Restaurante</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         :root {
-            --gold: #d4af37;
-            --dark-bg: #0a0a0a;
-            --glass: rgba(255, 255, 255, 0.05);
-            --text-light: #f4f4f4;
+            --dorado: #d4af37;
+            --oscuro: #1a1a1a;
+            --blanco: #ffffff;
+            --gris-claro: #f4f4f4;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--dark-bg);
-            color: var(--text-light);
+            margin: 0;
             font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.6;
+            color: var(--oscuro);
+            scroll-behavior: smooth;
         }
 
-        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--gold); }
+        /* Navegación */
+        nav {
+            position: fixed;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            box-sizing: border-box;
+        }
 
-        /* --- WHATSAPP FLOATING BUTTON --- */
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--oscuro);
+            margin-left: 30px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--dorado); }
+
+        /* Sección Hero (Basada en video) */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('1000050880.webp'); /* Imagen de fondo principal */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            margin: 0;
+        }
+
+        .hero p { font-size: 20px; letter-spacing: 2px; }
+
+        .btn-carta {
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: var(--dorado);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        /* ¿Qué Somos? */
+        .about {
+            padding: 80px 10%;
+            text-align: center;
+            background: var(--gris-claro);
+        }
+
+        .about h2 { font-family: 'Playfair Display', serif; font-size: 45px; }
+        .about p { max-width: 800px; margin: 0 auto; line-height: 1.8; color: #555; }
+
+        /* Experiencias */
+        .experiences { padding: 80px 5%; }
+        .grid-experiences {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+        .card-content { padding: 25px; }
+        .card-content h3 { font-family: 'Playfair Display', serif; margin-top: 0; }
+        .price-tag { color: var(--dorado); font-weight: bold; font-size: 18px; }
+
+        /* Botón WhatsApp Flotante */
         .whatsapp-float {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
+            bottom: 40px;
+            right: 40px;
+            background: #25d366;
             color: white;
             width: 60px;
             height: 60px;
@@ -40,195 +131,100 @@
             justify-content: center;
             align-items: center;
             font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
             z-index: 1000;
-            transition: transform 0.3s;
-        }
-        .whatsapp-float:hover { transform: scale(1.1); }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('1000050767.webp'); /* Foto #3 del Fundo */
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
         }
 
-        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; max-width: 700px; margin-bottom: 30px; }
-
-        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
-        .btn {
-            padding: 12px 30px;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            text-decoration: none;
-            border-radius: 5px;
-            transition: 0.3s;
-            text-transform: uppercase;
-            font-weight: 600;
-            background: transparent;
-        }
-        .btn:hover { background: var(--gold); color: black; }
-
-        /* --- SERVICES SECTIONS --- */
-        .section { padding: 80px 10% 40px; }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 25px;
-            transition: 0.4s;
-            text-align: center;
-        }
-        .card:hover { border-color: var(--gold); transform: translateY(-10px); }
-        .card img { width: 100%; border-radius: 10px; margin-bottom: 20px; height: 200px; object-fit: cover; }
-        .card h3 { margin-bottom: 15px; }
-        .price { color: var(--gold); font-size: 1.4rem; font-weight: bold; margin: 15px 0; display: block; }
-
-        /* --- MENU SECTION --- */
-        .menu-container { background: #111; padding: 60px 10%; border-radius: 50px 50px 0 0; }
-        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .menu-item { display: flex; justify-content: space-between; border-bottom: 1px dashed #444; padding: 10px 0; }
-
-        /* --- TESTIMONIALS --- */
-        .testimonials { background: var(--dark-bg); text-align: center; padding: 60px 10%; }
-        .testimonial-card { font-style: italic; color: #ccc; margin-bottom: 30px; }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .menu-grid { grid-template-columns: 1fr; }
-        }
     </style>
 </head>
 <body>
+
+    <nav>
+        <div class="logo">LA QUERENCIA</div>
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#carta">La Carta</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <h1>La Querencia</h1>
+        <p>Vive la tradición en el corazón de Moche</p>
+        <a href="#carta" class="btn-carta">Ver la Carta</a>
+    </section>
+
+    <section class="about" id="nosotros">
+        <h2>¿Qué Somos?</h2>
+        <div style="color: var(--dorado); margin-bottom: 20px;">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <span style="color: #888; font-size: 14px;"> 4.2 estrellas - 158 opiniones</span>
+        </div>
+        <p>Somos un fundo restaurante campestre que brinda múltiples servicios con caballos. Desde cabalgatas por la playa hasta los más exquisitos platos criollos y marinos. Un espacio familiar con áreas verdes, juegos y cultura viva.</p>
+    </section>
+
+    <section class="experiences" id="servicios">
+        <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 40px;">Nuestras Experiencias</h2>
+        <div class="grid-experiences">
+            
+            <div class="card">
+                <img src="1000050803.webp" alt="Cabalgata en la playa"> <div class="card-content">
+                    <h3>Cabalgata en la Playa</h3>
+                    <p>Paseo guiado de 70 min por la orilla del mar al atardecer. Incluye fotos y videos.</p>
+                    <p><strong>Salidas:</strong> 10:00 am, 11:30 am, 4:00 pm y 5:30 pm.</p>
+                    <span class="price-tag">S/. 80.00 (1 pers) / S/. 70.00 (2+ pers)</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="1000050730.jpg" alt="Clases de monta"> <div class="card-content">
+                    <h3>Clases de Monta</h3>
+                    <p>Aprende desde el nivel básico hasta bailar marinera a caballo. Diploma al finalizar cada nivel.</p>
+                    <p><strong>Duración:</strong> 50 min por clase.</p>
+                    <span class="price-tag">S/. 450.00 (8 clases)</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="1000050734.jpg" alt="Eventos y Picnic"> <div class="card-content">
+                    <h3>Eventos y Picnic</h3>
+                    <p>Cenas románticas, cumpleaños y eventos corporativos en un ambiente único y exclusivo.</p>
+                    <span class="price-tag">Consultar Presupuesto</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="about" id="carta" style="background: white;">
+        <h2>Nuestra Especialidad al Cilindro</h2>
+        <div class="grid-experiences">
+            <div class="card">
+                <img src="1000050806.jpg" alt="Panceta al cilindro"> <div class="card-content">
+                    <h3>Panceta Criolla</h3>
+                    <p>Jugosa panceta ahumada al cilindro con el toque secreto de la casa.</p>
+                    <span class="price-tag">S/. 35.00 (Porción) / S/. 130.00 (Kilo)</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="1000050807.jpg" alt="Mostrito"> <div class="card-content">
+                    <h3>Mostrito al Cilindro</h3>
+                    <p>1/4 de Pollo al cilindro acompañado de arroz chaufa y papas fritas.</p>
+                    <span class="price-tag">S/. 30.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <a href="https://wa.me/51913047602" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <section class="hero">
-        <h1>Fundo La Querencia</h1>
-        <p>Sabor, Tradición y Caballos de Paso en el Corazón de Moche. Una experiencia campestre única frente al mar de Las Delicias.</p>
-        <div class="btn-group">
-            <a href="#menu" class="btn">Restaurante</a>
-            <a href="#cabalgatas" class="btn">Cabalgatas</a>
-            <a href="#hospedaje" class="btn">Hospedaje</a>
-        </div>
-    </section>
-
-    <section id="cabalgatas" class="section">
-        <h2 class="section-title">Experiencias a Caballo</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="1000050803.webp" alt="Cabalgata en la Playa">
-                <h3>Cabalgata en la Playa</h3>
-                <p>Clase introductoria + Cabalgata + Fotos y Videos (70 min). Ruta hacia playa El Acuario.</p>
-                <span class="price">S/ 70.00 <small>(Desde 2 pers.)</small></span>
-                <p><i class="far fa-clock"></i> 10am / 11:30am / 4pm / 5:30pm</p>
-            </div>
-            <div class="card">
-                <img src="1000050880.webp" alt="Clases de Monta">
-                <h3>Clases de Monta</h3>
-                <p>Aprende cuidados, interacción y monta en sus distintos ritmos. Niveles: Básico, Intermedio y Avanzado.</p>
-                <span class="price">S/ 450.00 <small>(8 clases)</small></span>
-                <p>Incluye diploma al culminar el nivel.</p>
-            </div>
-            <div class="card">
-                <img src="1000050871.webp" alt="Sesión de Fotos">
-                <h3>Sesión de Fotos</h3>
-                <p>Ideal para Quinceaños y Pre-bodas. Incluye caballo dócil con montura elegante y guía instructor.</p>
-                <span class="price">S/ 200.00 <small>(2 horas)</small></span>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="background: #0f0f0f;">
-        <h2 class="section-title">Momentos Especiales</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="1000050904.jpg" alt="Pedida de Mano">
-                <h3>Picnic & Pedidas de Mano</h3>
-                <p>Cenas románticas personalizadas frente al mar o en el grass. Creamos la atmósfera perfecta para el "Sí".</p>
-                <a href="https://wa.me/51913047602" class="btn">Consultar Detalles</a>
-            </div>
-            <div class="card">
-                <img src="1000050730.jpg" alt="Eventos">
-                <h3>Eventos Corporativos</h3>
-                <p>Alquiler de local para empresas y eventos particulares. Amplios salones y áreas verdes.</p>
-                <a href="https://wa.me/51913047602" class="btn">Cotizar Evento</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="menu" class="menu-container">
-        <h2 class="section-title">Nuestra Carta Criolla</h2>
-        
-        <h3 style="margin-bottom: 20px;">Especialidades al Cilindro</h3>
-        <div class="menu-grid">
-            <div>
-                <div class="menu-item"><span>Panceta Criolla (230g)</span> <span>S/ 35.00</span></div>
-                <div class="menu-item"><span>Panceta Oriental (230g)</span> <span>S/ 38.00</span></div>
-                <div class="menu-item"><span>1/4 Pollo al Cilindro</span> <span>S/ 29.00</span></div>
-                <div class="menu-item"><span>Mostrito al Cilindro</span> <span>S/ 30.00</span></div>
-            </div>
-            <div>
-                <div class="menu-item"><span>1 KG Panceta Criolla</span> <span>S/ 130.00</span></div>
-                <div class="menu-item"><span>500g Panceta Oriental</span> <span>S/ 75.00</span></div>
-                <div class="menu-item"><span>1/8 Pollo Junior</span> <span>S/ 25.00</span></div>
-            </div>
-        </div>
-
-        <h3 style="margin-top: 40px; margin-bottom: 20px;">Marinos y Criollos</h3>
-        <div class="menu-grid">
-            <div>
-                <div class="menu-item"><span>Ceviche de Pescado</span> <span>S/ 38.00</span></div>
-                <div class="menu-item"><span>Arroz con Mariscos</span> <span>S/ 42.00</span></div>
-                <div class="menu-item"><span>Cabrito a la Norteña</span> <span>S/ 42.00</span></div>
-            </div>
-            <div>
-                <div class="menu-item"><span>Lomo Saltado</span> <span>S/ 30.00</span></div>
-                <div class="menu-item"><span>Causa de Langostinos</span> <span>S/ 28.00</span></div>
-                <div class="menu-item"><span>Jarra de Chicha Morada</span> <span>S/ 20.00</span></div>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 40px;">
-            <p><i class="fas fa-star"></i> <strong>Show de Marinera y Caballos de Paso:</strong> Todos los días a las 2:30 PM</p>
-        </div>
-    </section>
-
-    <section class="testimonials">
-        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
-        <div class="testimonial-card">
-            <p>"Desde la atención vía WhatsApp fue lo máximo. Una experiencia única con Penélope y Señor de Señores. Gracias Alejandro por el amor a los caballos."</p>
-            <br><strong>- Zara (Local Guide)</strong>
-        </div>
-        <div class="testimonial-card">
-            <p>"Ambiente espacioso, familiar y con buenas atracciones para niños y adultos. El show es interactivo y la comida excelente."</p>
-            <br><strong>- Miguel Sotomayor</strong>
-        </div>
-    </section>
-
-    <footer style="text-align: center; padding: 40px; background: #050505; border-top: 1px solid #222;">
+    <footer style="background: var(--oscuro); color: white; padding: 40px; text-align: center;">
         <p>Calle Loreto Cdra 2 - Sector Taquila, Moche, Trujillo</p>
-        <p>Abierto Lunes a Domingo: 9:00 AM - 6:00 PM</p>
-        <p style="margin-top: 20px; color: var(--gold);">© 2026 Fundo La Querencia - Todos los derechos reservados.</p>
+        <p>&copy; 2026 Fundo La Querencia. Diseñado con pasión.</p>
     </footer>
 
 </body>
