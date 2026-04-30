@@ -1,37 +1,352 @@
-<body><a href="https://wa.me/51913047602" class="whatsapp-float" target="_blank">    <i class="fab fa-whatsapp"></i></a><nav>    <div class="logo">LA QUERENCIA</div>    <ul>        <li><a href="#inicio">Inicio</a></li>        <li><a href="#nosotros">Nosotros</a></li>        <li><a href="#servicios">Servicios</a></li>        <li><a href="#carta">La Carta</a></li>    </ul></nav><section id="inicio" class="hero">    <h1>La Querencia</h1>    <p>Vive la tradición en el corazón de Moche</p>    <a href="#carta" class="btn-reserva">Ver la Carta</a></section><section id="nosotros" class="about">    <h2>¿Qué Somos?</h2>    <p>        Somos un fundo restaurante campestre que combina lo mejor de la gastronomía criolla con el garbo de nuestros caballos.        Contamos con amplias áreas verdes, juegos para niños, hamacas y un ambiente diseñado para desconectarse de la ciudad.    </p>    <p><strong>Ubicación:</strong> Moche, Playa El Acuario, Las Delicias.</p></section><section id="servicios" class="services">    <h2 style="text-align:center; margin-bottom: 40px; color: var(--primario);">        Nuestras Experiencias    </h2>    <div class="grid-services">        <div class="service-card">            <img src="10000803.webp">            <h3>Cabalgata en la Playa</h3>            <p>Clase introductoria + Cabalgata + Fotos/Videos (70 min)</p>        </div>        <div class="service-card">            <img src="10000880.webp">            <h3>Clases de Monta</h3>            <p>Desde nivel básico hasta marinera a caballo (8 clases)</p>        </div>        <div class="service-card">            <img src="10000904.jpg">            <h3>Picnic y Cenas Románticas</h3>            <p>Eventos personalizados: cumpleaños y pedidas de mano</p>        </div>        <div class="service-card">            <img src="10000871.webp">            <h3>Sesiones de Fotos</h3>            <p>Quinceañeras y pre-bodas con caballo de concurso</p>        </div>        <div class="service-card">            <img src="10000679.jpg">            <h3>Show de Marinera</h3>            <p>Todos los días a las 2:30 pm (gratis para clientes)</p>        </div>    </div></section><section id="carta" class="menu-section">    <h2 style="text-align:center; font-size: 3rem; color: var(--primario);">        Nuestra Carta    </h2>    <div class="menu-category">        <h2>Carnes al Cilindro</h2>        <div class="grid-menu">            <div class="plato-item">                <img src="10000806.jpg">                <div class="plato-info">                    <h4>Panceta Criolla (230gr)</h4>                </div>                <div class="plato-precio">S/. 35.00</div>            </div>            <div class="plato-item">                <img src="10000807.jpg">                <div class="plato-info">                    <h4>Panceta Oriental</h4>                </div>                <div class="plato-precio">S/. 38.00</div>            </div>            <div class="plato-item">                <img src="10000806.jpg">                <div class="plato-info">                    <h4>Mostrito al Cilindro</h4>                </div>                <div class="plato-precio">S/. 30.00</div>            </div>        </div>    </div>    <div class="menu-category">        <h2>Platos Criollos</h2>        <div class="grid-menu">            <div class="plato-item">                <img src="10000886.jpg">                <div class="plato-info">                    <h4>Lomo Saltado</h4>                </div>                <div class="plato-precio">S/. 30.00</div>            </div>            <div class="plato-item">                <div class="plato-info">                    <h4>Cabrito a la Norteña</h4>                </div>                <div class="plato-precio">S/. 42.00</div>            </div>        </div>    </div>    <div class="menu-category">        <h2>Marinos</h2>        <div class="grid-menu">            <div class="plato-item">                <div class="plato-info">                    <h4>Ceviche de Pescado</h4>                </div>                <div class="plato-precio">S/. 38.00</div>            </div>            <div class="plato-item">                <div class="plato-info">                    <h4>Arroz con Mariscos</h4>                </div>                <div class="plato-precio">S/. 42.00</div>            </div>        </div>    </div></section><footer>    <p><strong>La Querencia - Fundo Restaurante</strong></p>    <p>Moche, Playa El Acuario, Las Delicias</p>    <p>WhatsApp: +51 913 047 602</p></footer></body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Querencia - Fundo Restaurante & Show</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primario: #8d6e63; /* Marrón tierra */
+            --secundario: #f4e1d2; /* Crema suave */
+            --acento: #c6a052; /* Dorado/Arena */
+            --oscuro: #2c2c2c;
+            --blanco: #ffffff;
+            --verde: #2e7d32;
+            --terracota: #a0522d;
+        }
 
-🔥 Mejoras que podrías hacer (te recomiendo)
-Te digo directo:
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--oscuro);
+            line-height: 1.6;
+            background-color: #fafafa;
+            scroll-behavior: smooth;
+        }
 
-📸 Cambiar TODAS las imágenes locales (10000...) por imágenes reales online o subirlas bien
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
+        /* --- NAVEGACIÓN --- */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-🗺️ Agregar Google Maps
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primario); text-decoration: none; }
 
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { 
+            text-decoration: none; 
+            color: var(--oscuro); 
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        nav ul li a:hover { color: var(--acento); }
 
-📲 Botón de reserva directa con mensaje automático
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--blanco);
+            padding: 0 20px;
+        }
 
+        .hero h1 { font-size: 4rem; margin-bottom: 10px; color: var(--acento); }
+        .hero p { font-size: 1.5rem; margin-bottom: 20px; font-weight: 300; }
+        .btn-reserva {
+            padding: 15px 30px;
+            background: var(--acento);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .btn-reserva:hover { background: var(--primario); transform: translateY(-3px); }
 
-⭐ Conectar opiniones reales (Google)
+        /* --- SECCIÓN NOSOTROS --- */
+        .about { padding: 80px 10%; text-align: center; background: var(--secundario); }
+        .about h2 { font-size: 2.5rem; color: var(--primario); margin-bottom: 20px; }
+        .about p { max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; }
 
+        /* --- SERVICIOS --- */
+        .services { padding: 80px 5%; }
+        .grid-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
+        .service-card img { width: 100%; height: 220px; object-fit: cover; }
+        .service-info { padding: 20px; }
+        .service-info h3 { color: var(--terracota); margin-bottom: 10px; }
+        .precio-servicio { color: var(--verde); font-weight: 600; font-size: 1.1rem; display: block; margin-top: 10px; }
 
+        /* --- MENÚ / CARTA --- */
+        .menu-section { padding: 80px 5%; background: #fff; }
+        .section-title { text-align: center; font-size: 3rem; color: var(--primario); margin-bottom: 50px; }
+        
+        .menu-category { margin-bottom: 60px; }
+        .menu-category h2 { 
+            border-bottom: 3px solid var(--acento); 
+            display: inline-block; 
+            margin-bottom: 30px; 
+            color: var(--terracota);
+            font-size: 1.8rem;
+        }
+        
+        .grid-menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        .plato-item {
+            display: flex;
+            align-items: center;
+            background: #fdfdfd;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #f0f0f0;
+            transition: 0.3s;
+        }
+        .plato-item:hover { background: var(--secundario); }
+        .plato-item img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 2px solid var(--acento); }
+        .plato-info { flex-grow: 1; }
+        .plato-info h4 { font-size: 1.1rem; color: var(--oscuro); }
+        .plato-info p { font-size: 0.85rem; color: #666; }
+        .plato-precio { font-weight: bold; color: var(--terracota); font-size: 1.1rem; min-width: 80px; text-align: right; }
 
-Si quieres siguiente nivel 🚀
-Puedo ayudarte a:
+        /* --- TESTIMONIOS --- */
+        .reviews { padding: 80px 10%; background: var(--oscuro); color: white; text-align: center; }
+        .reviews h2 { color: var(--acento); margin-bottom: 40px; }
+        .review-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        .review-box {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 15px;
+            width: 350px;
+            border: 1px solid rgba(198, 160, 82, 0.3);
+        }
+        .stars { color: var(--acento); margin-bottom: 15px; }
 
+        /* --- WHATSAPP --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
 
-Hacer que la carta sea interactiva (con tabs funcionales)
+        footer { background: #111; color: #aaa; padding: 50px 5% 20px; text-align: center; }
+        .footer-info { margin-bottom: 20px; }
+        .footer-info p { margin-bottom: 5px; }
 
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            nav ul { display: none; }
+            .grid-menu { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
 
-Agregar reservas automáticas
+<a href="https://wa.me/51913047602" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
+<nav>
+    <a href="#" class="logo">LA QUERENCIA</a>
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Experiencias</a></li>
+        <li><a href="#carta">La Carta</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
 
-Convertirlo en web profesional tipo restaurante top
+<section id="inicio" class="hero">
+    <h1>La Querencia</h1>
+    <p>Sabor, Tradición y Caballos de Paso en el corazón de Moche</p>
+    <a href="#carta" class="btn-reserva">Explorar la Carta</a>
+</section>
 
+<section id="nosotros" class="about">
+    <h2>Nuestra Esencia</h2>
+    <p>Somos un fundo restaurante campestre que fusiona lo mejor de la gastronomía trujillana con la majestuosidad del Caballo Peruano de Paso. Un espacio familiar donde la cultura viva, las áreas verdes y el sabor criollo se encuentran para crear momentos inolvidables.</p>
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        <p style="color: var(--oscuro); margin-top: 10px;">4.2 estrellas - Basado en 158 opiniones reales</p>
+    </div>
+</section>
 
-Optimizar para que salga en Google
+<section id="servicios" class="services">
+    <h2 style="text-align:center; margin-bottom: 40px; color: var(--primario); font-size: 2.5rem;">Nuestras Experiencias</h2>
+    <div class="grid-services">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1598974357801-cbca100e65d3?auto=format&fit=crop&w=500&q=60" alt="Cabalgata">
+            <div class="service-info">
+                <h3>Cabalgata en la Playa</h3>
+                <p>Paseo guiado de 70 min por la orilla del mar al atardecer. Incluye fotos y videos del recuerdo.</p>
+                <span class="precio-servicio">Consultar disponibilidad</span>
+            </div>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1551884831-bbf3cdc67170?auto=format&fit=crop&w=500&q=60" alt="Show">
+            <div class="service-info">
+                <h3>Show de Marinera</h3>
+                <p>Disfruta de 5 números estelares con nuestros ejemplares de paso. Todos los días a las 2:30 pm.</p>
+                <span class="precio-servicio">Acceso libre para comensales</span>
+            </div>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=500&q=60" alt="Clases">
+            <div class="service-info">
+                <h3>Clases de Monta</h3>
+                <p>Aprende desde el nivel básico hasta el arte de bailar marinera a lomo de caballo.</p>
+                <span class="precio-servicio">Sesiones personalizadas</span>
+            </div>
+        </div>
+    </div>
+</section>
 
+<section id="carta" class="menu-section">
+    <h2 class="section-title">Nuestra Carta Real</h2>
+      
+    <div class="menu-category">
+        <h2>Pescados y Mariscos</h2>
+        <div class="grid-menu">
+            <div class="plato-item">
+                <img src="https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?auto=format&fit=crop&w=200&q=60" alt="Ceviche">
+                <div class="plato-info">
+                    <h4>Ceviche de Pescado</h4>
+                    <p>Fresco, con limón de piura y ají limo</p>
+                </div>
+                <div class="plato-precio">S/. 38.00</div>
+            </div>
+            <div class="plato-item">
+                <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=200&q=60" alt="Arroz con mariscos">
+                <div class="plato-info">
+                    <h4>Arroz con Mariscos</h4>
+                    <p>Selección premium del día</p>
+                </div>
+                <div class="plato-precio">S/. 42.00</div>
+            </div>
+        </div>
+    </div>
 
-Solo dime:
-👉 “hazlo más pro” o “quiero nivel negocio” y lo llevamos a otro nivel.
+    <div class="menu-category">
+        <h2>Carnes y Especialidades</h2>
+        <div class="grid-menu">
+            <div class="plato-item">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=60" alt="Lomo Saltado">
+                <div class="plato-info">
+                    <h4>Lomo Saltado</h4>
+                    <p>Lomo fino flambeado al wok</p>
+                </div>
+                <div class="plato-precio">S/. 50.00</div>
+            </div>
+            <div class="plato-item">
+                <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=200&q=60" alt="Pollo cilindro">
+                <div class="plato-info">
+                    <h4>Mostrito al Cilindro</h4>
+                    <p>Pollo ahumado + Chaufa + Papas</p>
+                </div>
+                <div class="plato-precio">S/. 30.00</div>
+            </div>
+            <div class="plato-item">
+                <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=200&q=60" alt="Cabrito">
+                <div class="plato-info">
+                    <h4>Cabrito a la Norteña</h4>
+                    <p>Tierna carne con frejoles y yuca</p>
+                </div>
+                <div class="plato-precio">S/. 42.00</div>
+            </div>
+            <div class="plato-item">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=60" alt="Panceta">
+                <div class="plato-info">
+                    <h4>Panceta Criolla (230gr)</h4>
+                    <p>Crocante y jugosa con papas salteadas</p>
+                </div>
+                <div class="plato-precio">S/. 35.00</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="reviews">
+    <h2>Lo que dicen nuestros visitantes</h2>
+    <div class="review-container">
+        <div class="review-box">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p>"Hermoso espectáculo de caballos de paso y la atención es muy cálida. El lomo saltado es increíble."</p>
+            <strong style="color: var(--acento);">- Corintia</strong>
+        </div>
+        <div class="review-box">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p>"Un ambiente muy relajante para venir en familia. El show de las 2:30 pm es imperdible."</p>
+            <strong style="color: var(--acento);">- José Goméz</strong>
+        </div>
+    </div>
+</section>
+
+<footer id="contacto">
+    <div class="footer-info">
+        <p><strong>La Querencia - Fundo Restaurante</strong></p>
+        <p><i class="fas fa-map-marker-alt"></i> Calle Loreto Cdra 2, Sector Taquila, Moche</p>
+        <p><i class="fab fa-whatsapp"></i> Reservas: +51 913 047 602</p>
+    </div>
+    <div style="margin: 20px 0;">
+        <a href="#" style="color: white; margin: 0 10px; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+        <a href="#" style="color: white; margin: 0 10px; font-size: 1.5rem;"><i class="fab fa-tiktok"></i></a>
+        <a href="#" style="color: white; margin: 0 10px; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+    </div>
+    <p style="font-size: 0.8rem; opacity: 0.6;">© 2026 La Querencia. Tradición Mochera en cada detalle.</p>
+</footer>
+
+</body>
+</html>
